@@ -1,0 +1,9 @@
+import pandas as pd
+import sqlite3
+
+#creating database connection
+conn = sqlite3.connect('inventory.db')
+
+#checling tables present in the database
+tables = pd.read_sql_query("SELECT name FROM sqlite_master WHERE type='table'".conn)
+tables
